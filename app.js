@@ -8,6 +8,8 @@ const app = express();
 
 app.use(express.json())
 
+const PORT = process.env.PORT || 8080;
+
 app.use(cors());
 
 admin.initializeApp({
@@ -26,7 +28,6 @@ app.get('/', async(req, res) => {
     }
 })
 
-const port = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
     console.log(`Servidor iniciado en el puerto ${PORT}`);
